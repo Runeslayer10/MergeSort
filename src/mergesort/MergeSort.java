@@ -8,20 +8,20 @@ class MergeSort
 	// Merges two subarrays of arr[]. 
 	// First subarray is arr[l..m] 
 	// Second subarray is arr[m+1..r] 
-	void merge(int arr[], int l, int m, int r) 
+	public static void merge(int arr[], int l, int m, int r) 
 	{ 
 		// Find sizes of two subarrays to be merged 
-		int n1 = m - l + 1; 
-		int n2 = r - m; 
+		int array1 = m - l + 1; 
+		int array2 = r - m; 
 
 		/* Create temp arrays */
-		int L[] = new int [n1]; 
-		int R[] = new int [n2]; 
+		int L[] = new int [array1]; 
+		int R[] = new int [array2]; 
 
 		/*Copy data to temp arrays*/
-		for (int i=0; i<n1; ++i) 
+		for (int i=0; i<array1; ++i) 
 			L[i] = arr[l + i]; 
-		for (int j=0; j<n2; ++j) 
+		for (int j=0; j<array2; ++j) 
 			R[j] = arr[m + 1+ j]; 
 
 
@@ -32,7 +32,7 @@ class MergeSort
 
 		// Initial index of merged subarry array 
 		int k = l; 
-		while (i < n1 && j < n2) 
+		while (i < array1 && j < array2) 
 		{ 
 			if (L[i] <= R[j]) 
 			{ 
@@ -48,7 +48,7 @@ class MergeSort
 		} 
 
 		/* Copy remaining elements of L[] if any */
-		while (i < n1) 
+		while (i < array1) 
 		{ 
 			arr[k] = L[i]; 
 			i++; 
@@ -56,7 +56,7 @@ class MergeSort
 		} 
 
 		/* Copy remaining elements of R[] if any */
-		while (j < n2) 
+		while (j < array2) 
 		{ 
 			arr[k] = R[j]; 
 			j++; 
@@ -66,7 +66,7 @@ class MergeSort
 
 	// Main function that sorts arr[l..r] using 
 	// merge() 
-	void sort(int arr[], int l, int r) 
+	public static void sort(int arr[], int l, int r) 
 	{ 
 		if (l < r) 
 		{ 
@@ -94,21 +94,12 @@ class MergeSort
 	// Driver method 
 	public static void main(String args[]) 
 	{
-            int elements= 100000;
+            int elements= 100;
       int arr[] = new int[elements];
      //= {22, 30, 15, 1, 7, 87, 65, 24, 22, 0}
     for (int i=0; i<elements; i++){
         arr[i]=(int)(Math.random()*101);
     }
-    double start=0;
-    double finish=0;
-    double total=0;
-    start = currentTimeMillis();
-    sort(nums);
-    finish = currentTimeMillis();
-    total = finish - start;
-		 
-
 		System.out.println("Given Array"); 
 		printArray(arr); 
 
